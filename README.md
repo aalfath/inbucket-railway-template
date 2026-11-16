@@ -1,3 +1,5 @@
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/new/template/inbucket?utm_medium=integration&utm_source=button&utm_campaign=inbucket)
+
 # Inbucket on Railway
 
 A Railway template for [Inbucket](https://www.inbucket.org/) **3.2.0**, a disposable email testing service. Inbucket accepts every message sent to its SMTP server, stores it without delivering it, and lets you read it in a web UI, through its REST API or over POP3.
