@@ -1,0 +1,21 @@
+{
+	admin off
+	auto_https off
+	persist_config off
+}
+
+:{$PORT} {
+	# Health check for Railway: answers without login, and only when
+	# Inbucket itself is up. It returns the UI's empty HTML shell, no mail.
+	handle /healthz {
+		rewrite * /
+		reverse_proxy 127.0.0.1:9000
+	}
+
+	handle {
+		basic_auth {
+			{$INBUCKET_USERNAME} {$INBUCKET_PASSWORD_HASH}
+		}
+		reverse_proxy 127.0.0.1:9000
+	}
+}
